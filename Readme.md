@@ -10,7 +10,12 @@ Model Selection: Choose from various pre-trained models:
 4. Multinomial Naive Bayes
 
 User Input: Enter tweets through a simple text area for classification.
+
 Prediction Output: Displays whether the tweet is classified as "Cyberbully" or "Not Cyberbully."
+
+## Dataset
+
+This project uses a dataset sourced from Kaggle.
 
 ## Detailed Insights:
 
