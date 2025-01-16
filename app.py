@@ -4,19 +4,19 @@ import pickle
 # Load all models and their vectorizers
 models = {
     "LinearSVC": {
-        "model": "model/LinearSVC.pkl",
+        "model": "models/LinearSVC.pkl",
         "vectorizer": "vectorizer/LinearSVC_vectorizer.pkl"
     },
     "KNeighborsClassifier": {
-        "model": "model/KNeighborsClassifier.pkl",
+        "model": "models/KNeighborsClassifier.pkl",
         "vectorizer": "vectorizer/KNeighborsClassifier_vectorizer.pkl"
     },
     "Logistic Regression": {
-        "model": "model/logistic_regression.pkl",
+        "model": "models/logistic_regression.pkl",
         "vectorizer": "vectorizer/logistic_regression_vectorizer.pkl"
     },
     "MultinomialNB": {
-        "model": "model/MultinomialNB.pkl",
+        "model": "models/MultinomialNB.pkl",
         "vectorizer": "vectorizer/MultinomialNB_vectorizer.pkl"
     }
 }
