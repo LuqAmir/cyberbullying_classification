@@ -4,10 +4,10 @@
 
 Model Selection: Choose from various pre-trained models:
 
-LinearSVC
-KNeighborsClassifier
-Logistic Regression
-Multinomial Naive Bayes
+1. LinearSVC
+2. KNeighborsClassifier
+3. Logistic Regression
+4. Multinomial Naive Bayes
 
 User Input: Enter tweets through a simple text area for classification.
 Prediction Output: Displays whether the tweet is classified as "Cyberbully" or "Not Cyberbully."
