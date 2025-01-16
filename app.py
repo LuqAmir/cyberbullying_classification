@@ -1,7 +1,5 @@
 import streamlit as st
-import seaborn as sns
 import pickle
-import numpy as np
 
 # Load all models and their vectorizers
 models = {
