@@ -1,5 +1,8 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
 import pickle
+import numpy as np
 
 # Load all models and their vectorizers
 models = {
@@ -44,15 +47,28 @@ if st.button("Classify"):
             prediction = model.predict(input_vectorized)[0]
 
             # Display the result
-            st.success(f"The predicted label is: **{prediction}**")
+            if prediction == 0:
+                st.success("The predicted label is: Not Cyberbully")
+            else:
+                st.error("The predicted label is: Cyberbully")
 
             # Display probabilities or decision function
-            if hasattr(model, "decision_function"):  # For models like SVC, LogisticRegression
+            if hasattr(model, "decision_function"):
                 probabilities = model.decision_function(input_vectorized)
-                st.write(f"Decision function output: {probabilities}")
-            elif hasattr(model, "predict_proba"):  # For models like KNN, MultinomialNB
+                st.write(f"Decision function output: {probabilities[0]}")
+                if probabilities[0] > 0:
+                    st.write("The input text is likely cyberbullying.")
+                else:
+                    st.write("The input text is not cyberbullying.")
+            elif hasattr(model, "predict_proba"):
                 probabilities = model.predict_proba(input_vectorized)
-                st.write(f"Probabilities: {probabilities}")
+                st.write(f"Probabilities: {probabilities[0]}")
+                if probabilities[0][1] > 0.5:
+                    st.write("The input text is likely cyberbullying.")
+                else:
+                    st.write("The input text is not cyberbullying.")
+
+            # Clear unnecessary code for confusion matrix (irrelevant here)
         except Exception as e:
             st.error(f"An error occurred: {e}")
     else:
