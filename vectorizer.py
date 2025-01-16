@@ -13,6 +13,10 @@ if 'cleaned_comments' not in data.columns:
 vectorizer = CountVectorizer()
 vectorizer.fit(data['cleaned_comments'])
 
+# Create and fit the vectorizer on the training data
+count_vector = CountVectorizer()
+count_vector.fit(X_train)  # Fit on the training data
+
 # Save vectorizer to a .pkl file
 with open("vectorizer.pkl", "wb") as file:
     pickle.dump(vectorizer, file)
